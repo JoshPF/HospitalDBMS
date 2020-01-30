@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  database:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: wodby/mariadb:10.4-3.6.8 
+    container_name: database
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=changeme
+      - MYSQL_DATABASE=db
+    ports:
+        - '1111:3306'
